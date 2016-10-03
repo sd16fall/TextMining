@@ -30,7 +30,7 @@ except:
     ("modality",STRING)])
     index = set()
 
-
+# OMISSION WAS MADE HERE - private key accidentally uploaded, need to purge! OMG
 # Declare Twitter object, to search for precise stream-based information
 twitter = Twitter(license=None, throttle = 0.5, language='en')
 
