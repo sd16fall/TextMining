@@ -30,7 +30,7 @@ except:
     ("modality",STRING)])
     index = set()
 
-#license=('ZlvGyUbFwvh6huUZ02VCbG6JP','q9vhGij4NJOLWyKpQsFch5cSPnaATcY2AfrS6SSpaP901seIMk'
+
 # Declare Twitter object, to search for precise stream-based information
 twitter = Twitter(license=None, throttle = 0.5, language='en')
 
