@@ -1,0 +1,19 @@
+Wayne Kwon
+
+Project Overview: 
+	I used twitter data to pull tweets of certain topics that I wanted to have a look at. I used 'twitterscraper' to scrape tweets from twitter that mentions my favorite soccer team Tottenham Hotspur from English Premier League Soccer. I wanted to look at how many times each attacking players are mentioned on a game day (in this project, champions league game against CSKA Moscow) and find out which player is mentioned the most. Eventually, the player that is mentioned the most will be awarded Man of the Match for that game. 
+
+Implementation: 
+	First, as I was pulling in the tweets, there were unnecessary parts (such as punctuation, hashtags, etc) that I did not need. I got rid of all the urls and other unnecessary parts. In addition, I split all the sentences into words and, using for loops, I also counted how many times each word is mentioned then created a dictionary in the format of {'word' : # of times mentioned}. Then I filtered the result to only have the name of attacking players. Because I wanted to sort the key by the value, I defined a function so that it returns a list of tuples sorted by values. 
+	One decision I had to make was the method of filtering for attacking players. I wanted to create the list of tuples with # of counts first, and then filter for attacking players. However, for some reason, the function would not capture the the # of counts correctly. I realized that it would save me both time and memory if I filter for the names by creating a new dictionary by applying the filters. 
+	
+Results:
+	I tried to find out if the tweets actually reflect the performance of the players that are playing very well in the season. Right now, Son Heung-min is the best performing player from Tottenham Hotspur as he is scoring most of the goals this season. 
+	My mini project result shows that he is definitely mentioned the most from the tweets. For the game against CSKA, he scored a winning goal, giving Spurs 3 points lead in the Champions League qualifiers. Performing the same code for a day before the game, it was interesting to find out that everyone was hyped up about Son Heung-min as he was mentioned the most even before the game. Maybe there is a reason why people are hyped up about a player - for his ability or for his current form. 
+
+Reflection:
+	I think my project was appropriately scoped. At first, I was worried about retweets being counted multiple times. However, I realized that retweets also represent someone's opinion as it means that one agrees/disagrees with the tweet they are reposting. 
+	If I had more time, this mini project can definitely beccome a very large project. After getting # counts of each player being mentioned, we can compare it to the players' actual performance (goals + assists) to see if there are any correlation. Moreover, I can also perform sentiment analysis on each player - but this would have been a different scope to start with. 
+	
+	
+
