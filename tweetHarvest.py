@@ -1,7 +1,7 @@
-# Sentiment Divergence Toolbox
+# Sentiment Divergence Toolkit
 # Anderson Ang Wei Jian, Mini Project 1
 # Returns statistics on the variance of opinions with regards to a topic;
-# This program requires (2) geolocations, restricted to capitals, and (1) topic of interest"
+# This program requires (2) geolocations, restricted to capitals, and (1) topic of interest
 # Local and global polarity of content, opinionation, and modality levels are reflected
 
 from pattern.web import Twitter , hashtags
@@ -33,7 +33,7 @@ except:
     ("modality",STRING)])
     index = set()
 
-# OMISSION WAS MADE HERE - private key accidentally uploaded, need to purge! OMG
+# Purged consumer keys and GPG-related content
 # Declare Twitter object, to search for precise stream-based information
 twitter = Twitter(license=None, throttle = 0.5, language='en')
 
