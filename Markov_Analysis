@@ -1,0 +1,99 @@
+import sys
+import string
+import random
+import pattern
+
+suffix_map = {}        
+prefix = ()            
+
+
+from pattern.web import * 
+Alice = URL('http://www.gutenberg.org/files/11/11-h/11-h.htm').download()
+
+
+"""
+Opens the file
+removes the header
+processes them using markov analysis
+"""
+def process_file(filename, order=2):
+    fp = Alice
+    skip_header(fp)
+    fp = fp.split()
+
+    for word in fp:
+        process_word(word, order)
+
+
+"""
+Skips the header of Project Guttenburg page by looking for the ending phrase
+"""
+def skip_header(fp):
+    for line in fp:
+        if line.startswith('*END*THE SMALL PRINT!'):
+            break
+
+
+
+"""
+Processes each word in the imported file 
+Begins creating a dictonary of the words
+"""
+def process_word(word, order=2):
+    global prefix
+    if len(prefix) < order:
+        prefix += (word,)
+        return
+
+    try:
+        suffix_map[prefix].append(word)
+    except KeyError:
+        suffix_map[prefix] = [word]
+
+    prefix = shift(prefix, word)
+
+
+"""
+Generates a random prefix from the dictionary
+Uses prefix to generate words to follow
+"""
+def random_text(n=100):
+       # Prefix generation
+    start = random.choice(suffix_map.keys())
+    
+    for i in range(n):
+        suffixes = suffix_map.get(start, None)
+        if suffixes == None:
+        
+            random_text(n-i)
+            return
+
+        # Suffix Generation
+        word = random.choice(suffixes)
+        print(word)
+        start = shift(start, word)
+
+"""
+Creates a tuple
+Deletes the first word, and adds a new word to the end
+"""
+def shift(t, word):
+    return t[1:] + (word,)
+
+
+def main(name, filename='', n=100, order=2, *args):
+    try:
+        n = int(n)
+        order = int(order)
+    except:
+        print('[# of words] [prefix length]')
+    else: 
+        process_file(filename, order)
+        random_text(n)
+
+
+if __name__ == '__main__':
+    main(*sys.argv)
+
+
+
