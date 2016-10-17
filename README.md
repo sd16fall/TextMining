@@ -26,6 +26,7 @@ bloom simultaneously.
 Gynoecium consists of
 
 the first to be
+---
  
 Space
 
@@ -34,6 +35,7 @@ a theory of a theory
 of the philosophy of space
 
 was any theory of
+---
 
 Truth
 
@@ -42,6 +44,7 @@ are true. They are
 true. They were introduced
 
 around the truth
+---
  
 And here is an example of an unintelligible haiku accidentally seed with a citation, which could be fixed with further iteration:
 
